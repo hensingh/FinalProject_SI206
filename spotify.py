@@ -1,6 +1,8 @@
 import sqlite3
 
 import plotly
+import plotly_info
+
 import plotly.graph_objs as go
 import plotly.plotly as py
 import spotipy
@@ -15,6 +17,7 @@ client_id = spotify_info.client_id
 client_secret = spotify_info.client_secret
 redirect_uri = spotify_info.redirect_uri
 token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
+plotly.tools.set_credentials_file(username='ojegede313', api_key='FomzPshLhQuPqFwho1qi')
 
 spotify_object = spotipy.Spotify(auth=token)
 
@@ -69,7 +72,8 @@ def viz():
 
 
 if __name__ == "__main__":
-    artist = input('Enter Artist: ')
-    insert_data(artist)
+    artist_name = input('Enter Artist: ')
+    insert_data(artist_name)
     viz()
     conn.close()
+	
