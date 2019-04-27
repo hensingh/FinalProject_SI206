@@ -19,7 +19,6 @@ def spotify_csv():
         except:
             print('encoding error')
     
-    # Loop through data to get important information
     for tup in data:
         album = tup [0]
         popularity = tup[1]
@@ -28,22 +27,19 @@ def spotify_csv():
         else:
             album_name[album].append(popularity)
     
-    # Finds the avergae of the popularity ratings of all a user's favorite songs for their release year
     for item in album_name.items():
         average = sum(item[1])/len(item[1])
         album_name[item[0]] = int(average)
 
-    # Sorts the lsit for easy viewing
+    
     sorted_list_1 = sorted(album_name.items(), key=lambda x: x[0])
-
-    # Outputs a CSV file for use in spotify_visualizations.py
     with open('spotify__albums.csv', 'w', newline='') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerows(sorted_list_1)
     csvFile.close()  
     print("Process ended")
     print("")
-    print("Creating Spotify albums.")
+    print("Creating Spotify Album Data.")
 
 
 
