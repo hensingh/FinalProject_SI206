@@ -72,8 +72,7 @@ def viz():
 
 
 if __name__ == "__main__":
-    artist_name = input('Enter Artist: ')
-    insert_data(artist_name)
+    insert_data(input('Enter artist: '))
     viz()
     conn.close()
 	
