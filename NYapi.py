@@ -13,7 +13,7 @@ from plotly.graph_objs import *
 plotly.tools.set_credentials_file(username='arkaiser', api_key='FPD9QHLidggsZLawfmQh')
 
 
-conn = sqlite3.connect('/Users/andrewkaiser/Documents/finalproject.sqlite')
+conn = sqlite3.connect(spotify.sqlite)
 cur = conn.cursor()
 #ur.execute('DROP TABLE IF EXISTS nytimes')
 cur.execute('CREATE TABLE IF NOT EXISTS nytimes (section TEXT, length INTEGER)')
