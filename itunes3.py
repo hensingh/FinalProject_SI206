@@ -10,7 +10,7 @@ import plotly.plotly as py
 from plotly.graph_objs import *
 
 plotly.tools.set_credentials_file(username='hensingh', api_key="kzdkwuy8LmYE0Njvb0OD")
-conn = sqlite3.connect('/Users/hennasingh/Desktop/itunes5.sqlite')
+conn = sqlite3.connect('spotify.sqlite')
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Itunes')
 cur.execute('CREATE TABLE Itunes(Length INTEGER, Artist TEXT)')
@@ -172,7 +172,7 @@ def viz():
         cells = item.split(',')
         artists.append(cells[0])
         songavg.append(cells[1].strip('\n'))
-    print(songavg)
+    #print(songavg)
 
     data = [go.Bar(x=artists, y=songavg)]
     
