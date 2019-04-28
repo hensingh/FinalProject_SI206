@@ -61,7 +61,7 @@ def viz():
         album.append(row[0])
         popularity.append(float(row[1]))
 
-    data = [go.Bar(x=album, y=popularity)]
+   data = [go.Bar(x=album, y=popularity, marker = dict(color='rgb(0,0,255)'))]
     layout = go.Layout(
         title="Albums and Their Average Popularity",
         yaxis=dict(title="Popularity")
