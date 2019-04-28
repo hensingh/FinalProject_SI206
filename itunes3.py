@@ -14,7 +14,8 @@ conn = sqlite3.connect('/Users/hennasingh/Desktop/itunes5.sqlite')
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Itunes')
 cur.execute('CREATE TABLE Itunes(Length INTEGER, Artist TEXT)')
-
+def test():
+    pass
 def John():
     r = requests.get('http://itunes.apple.com/search', params= {
         'term': 'John Mayer',
