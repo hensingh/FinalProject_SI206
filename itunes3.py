@@ -174,11 +174,11 @@ def viz():
         songavg.append(cells[1].strip('\n'))
     #print(songavg)
 
-    data = [go.Bar(x=artists, y=songavg)]
+    data = [go.Bar(x=artists, y=songavg, marker = dict(color='rgb(0,255,127)'))]
     
     layout = go.Layout(
         title = 'Artists Average Song Length',
-        yaxis=dict(title="Avg Song Length", range=[0,5])
+        yaxis=dict(title="Avg Song Length (minutes)", range=[0,5])
         
     )
 
