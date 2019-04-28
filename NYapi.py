@@ -76,7 +76,7 @@ conn.commit()
 
 
 def viz():
-    cur.execute('SELECT * FROM nytimes GROUP BY section ORDER BY section')
+    cur.execute('SELECT section, AVG(length) FROM nytimes GROUP BY section ORDER BY section')
     outfile = open('nyapi.txt', 'w')
     section = []
     avglength = []
