@@ -15,12 +15,10 @@ plotly.tools.set_credentials_file(username='arkaiser', api_key='FPD9QHLidggsZLaw
 
 conn = sqlite3.connect('spotify.sqlite')
 cur = conn.cursor()
-#ur.execute('DROP TABLE IF EXISTS nytimes')
 cur.execute('CREATE TABLE IF NOT EXISTS nytimes (section TEXT, length INTEGER)')
 #conn.close()
 
 def nyUS():
-    #mostviewed = requests.get('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?limit=2&api-key=YG8Tktps3JKniMJohga7kO5f5WecrgW6')
     ny = requests.get('https://api.nytimes.com/svc/news/v3/content/nyt/U.S./168.json?limit=20&api-key=YG8Tktps3JKniMJohga7kO5f5WecrgW6')
     ny_obj = json.loads(ny.text)
 
