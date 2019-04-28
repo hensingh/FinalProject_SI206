@@ -87,7 +87,7 @@ def viz():
     outfile.close()
     conn.commit()
    
-    dt = [go.Bar(x=section, y=avglength)]
+    dt = [go.Bar(x=section, y=avglength, marker = dict(color='rgb(45,20,75)'))]
     lo = go.Layout(title='NY Times Sections and Their Average Title Lengths', yaxis=dict(title='Average Title Length'))
 
     fig = go.Figure(data=dt, layout=lo)
